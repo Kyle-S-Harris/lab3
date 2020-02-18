@@ -14,8 +14,10 @@ function initializePage()
 {
 	$("#testjs").click(function(e) 
     {
-		$('.jumbotron h1').text("Javascript is connected");
+		$('.jumbotron h1').text("Javascript has taken control");
         $("a.thumbnail").click(projectClick);
+        $("#testjs").text("Please wait...");
+        $(".jumbotron p").toggleClass("active");
 	});
 
 	// Add any additional listeners here
@@ -34,7 +36,7 @@ function projectClick(e)
     } 
     else 
     {
-       description.html("<p>Stop clicking on me! You just did it at " + (new Date()) + "</p>");
+        $(description).fadeToggle();
     }
 }
 
